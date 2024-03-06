@@ -118,6 +118,21 @@ body {
 }
 
 /* shopping-card */
+#shopping-cart-button{
+  position: relative;
+}
+
+#shopping-cart-button .quantity-badge{
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
 
 .navbar .shopping-cart{
   position: absolute;
@@ -136,7 +151,7 @@ body {
 }
 
 .shopping-cart .card-item{
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -145,28 +160,89 @@ body {
 }
 
 .navbar .shopping-cart img{
-  height: 6rem;
-  width: 6rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
 }
 
 .shopping-cart h3{
-  font-size: 1.6rem;
-  padding-bottom: 0.5rem;
+  font-size: 0.8rem;
+
 }
 
 .shopping-cart .item-price {
   font-size: 1.2rem;
 }
 
-.shopping-cart .remove-item{
-  position: absolute;
-  right: 1rem;
+.shopping-cart .card-item #remove,
+.shopping-cart .card-item #add{
+  display: inline-block;
+  padding: 1px 3px;
+  cursor: pointer;
+  margin: 0 7px;
+  background-color: #010101;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.shopping-cart h4{
+  font-size: 1.6rem;
+  margin-top: -1rem;
+  text-align: center;
+}
+
+.form-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.form-container h5{
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-container form{
+  width: 100%;
+  text-align: center;
+}
+
+.form-container label{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form-container span{
+  text-align: right;
+}
+
+.form-container input{
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+
+.form-container .checkout-button{
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: #ddd;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
   cursor: pointer;
 }
 
-.shopping-cart .remove-item:hover{
-  color: var(--primary);
+.form-container .checkout-button.disabled{
+  background-color: #999;
+  cursor: not-allowed;
 }
 
 /* Hero Section */
@@ -381,7 +457,6 @@ body {
   font-weight: bold;
 }
 
-.products .product-price span,
 .modal .product-price span{
   text-decoration: line-through;
   font-weight: lighter;
